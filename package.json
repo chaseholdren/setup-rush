@@ -1,7 +1,7 @@
 {
-  "name": "@chaseholdren/use-rush",
+  "name": "@chaseholdren/use-rush-action",
   "version": "1.0.0",
-  "description": "",
+  "description": "GitHub Action to use a @microsoft/rush monorepo",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "standard --fix",
@@ -11,28 +11,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chaseholdren/setup-rush.git"
+    "url": "git+https://github.com/chaseholdren/use-rush-action.git"
   },
   "dependencies": {
     "@actions/cache": "^1.0.7",
     "@actions/core": "^1.2.5",
-    "@actions/exec": "^1.1.0",
-    "hasha": "^5.2.2"
+    "@actions/exec": "^1.1.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
     "@vercel/ncc": "^0.29.0",
-    "commitizen": "^4.2.4",
-    "cz-conventional-changelog": "^3.2.0",
     "eslint": "^7.32.0",
-    "standard": "^16.0.3"
+    "prettier": "^2.3.2"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chaseholdren/setup-rush/issues"
+    "url": "https://github.com/chaseholdren/use-rush-action/issues"
   },
-  "homepage": "https://github.com/chaseholdren/setup-rush#readme"
+  "homepage": "https://github.com/chaseholdren/use-rush-action#readme"
 }

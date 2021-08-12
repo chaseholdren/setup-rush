@@ -1,0 +1,17 @@
+name: 'Use Rush monorepo'
+description: 'GitHub Action to use a @microsoft/rush monorepo'
+# inputs:
+# node-version:
+#   description: 'Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0'
+#   required: false
+# node-check-latest:
+#   description: 'Set this option if you want the action to check for the latest available version that satisfies the version spec'
+#   required: false
+# outputs:
+#   time: # id of output
+#     description: 'The time we greeted you'
+runs:
+  using: 'node12'
+  main: 'dist/setup/index.js'
+  post: 'dist/cache-save/index.js'
+  post-if: success()

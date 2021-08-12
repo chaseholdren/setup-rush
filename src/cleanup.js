@@ -1,5 +1,5 @@
-const core = require('@actions/core');
-const cache = require('@actions/cache');
+import cache from '@actions/cache';
+import core from '@actions/core';
 
 async function run() {
   const paths = core.getState('cachePaths');

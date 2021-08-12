@@ -14,7 +14,7 @@
     "lint": "standard --fix",
     "build": "npm run buildMain && npm run buildCleanup",
     "buildMain": "ncc build -o dist/setup src/setup-node.ts",
-    "buildCleanup": "ncc build -o dist/cache-save src/cache-save.ts",
+    "buildCleanup": "ncc build src/cleanup.js -o dist/cleanup --source-map --license licenses.txt",
     "old-build": "ncc build -o dist/setup src/setup-node.ts && ncc build -o dist/cache-save src/cache-save.ts"
   },
   "dependencies": {

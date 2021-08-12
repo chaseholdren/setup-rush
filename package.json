@@ -1,5 +1,5 @@
 {
-  "name": "@chaseholdren/use-rush-action",
+  "name": "@chaseholdren/setup-rush",
   "version": "1.0.0",
   "description": "GitHub Action to use a @microsoft/rush monorepo",
   "scripts": {

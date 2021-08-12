@@ -1,5 +1,5 @@
-name: 'Use Rush monorepo'
-description: 'GitHub Action to use a @microsoft/rush monorepo'
+name: 'Setup Rush monorepo'
+description: 'GitHub Action to setup a @microsoft/rush monorepo'
 # inputs:
 # node-version:
 #   description: 'Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0'

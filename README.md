@@ -1,1 +1,1 @@
-# use-rush-action
+# setup-rush

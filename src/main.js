@@ -2,6 +2,7 @@ const core = require('@actions/core');
 const cache = require('@actions/cache');
 const exec = require('@actions/exec');
 const getCache = require('./cache');
+const rushLib = require('@microsoft/rush-lib');
 
 async function run() {
   try {

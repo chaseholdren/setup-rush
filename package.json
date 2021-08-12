@@ -5,20 +5,17 @@
   "description": "GitHub Action to use a @microsoft/rush monorepo",
   "main": "lib/setup-node.js",
   "scripts": {
-    "build": "ncc build -o dist/setup src/setup-node.ts && ncc build -o dist/cache-save src/cache-save.ts",
-    "format": "prettier --write **/*.ts",
-    "format-check": "prettier --check **/*.ts",
-    "test": "jest",
-    "pre-checkin": "npm run format && npm run build && npm test",
-    "2-test": "echo \"Error: no test specified\" && exit 1",
-    "2-lint": "standard --fix",
-    "2-build": "npm run buildMain && npm run buildCleanup",
-    "2-buildMain": "ncc build src/main.js -o dist/main --source-map --license licenses.txt",
-    "2-buildCleanup": "ncc build src/cleanup.js -o dist/cleanup --source-map --license licenses.txt"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chaseholdren/use-rush-action.git"
+    "setup-node-build": "ncc build -o dist/setup src/setup-node.ts && ncc build -o dist/cache-save src/cache-save.ts",
+    "setup-node-format": "prettier --write **/*.ts",
+    "setup-node-format-check": "prettier --check **/*.ts",
+    "setup-node-test": "jest",
+    "setup-node-pre-checkin": "npm run format && npm run build && npm test",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard --fix",
+    "build": "npm run buildMain && npm run buildCleanup",
+    "buildMain": "ncc build -o dist/setup src/setup-node.ts",
+    "buildCleanup": "ncc build -o dist/cache-save src/cache-save.ts",
+    "old-build": "ncc build -o dist/setup src/setup-node.ts && ncc build -o dist/cache-save src/cache-save.ts"
   },
   "dependencies": {
     "@actions/cache": "^1.0.7",
@@ -35,7 +32,19 @@
   "devDependencies": {
     "@vercel/ncc": "^0.29.0",
     "eslint": "^7.32.0",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.4",
+    "@types/semver": "^6.0.0",
+    "@zeit/ncc": "^0.21.0",
+    "jest": "^24.9.0",
+    "jest-circus": "^24.7.1",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaseholdren/use-rush-action.git"
   },
   "keywords": [],
   "author": "",

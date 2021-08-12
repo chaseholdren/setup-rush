@@ -1,13 +1,20 @@
 {
   "name": "@chaseholdren/setup-rush",
   "version": "1.0.0",
+  "private": true,
   "description": "GitHub Action to use a @microsoft/rush monorepo",
+  "main": "lib/setup-node.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "standard --fix",
-    "build": "npm run buildMain && npm run buildCleanup",
-    "buildMain": "ncc build src/main.js -o dist/main --source-map --license licenses.txt",
-    "buildCleanup": "ncc build src/cleanup.js -o dist/cleanup --source-map --license licenses.txt"
+    "build": "ncc build -o dist/setup src/setup-node.ts && ncc build -o dist/cache-save src/cache-save.ts",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "test": "jest",
+    "pre-checkin": "npm run format && npm run build && npm test",
+    "2-test": "echo \"Error: no test specified\" && exit 1",
+    "2-lint": "standard --fix",
+    "2-build": "npm run buildMain && npm run buildCleanup",
+    "2-buildMain": "ncc build src/main.js -o dist/main --source-map --license licenses.txt",
+    "2-buildCleanup": "ncc build src/cleanup.js -o dist/cleanup --source-map --license licenses.txt"
   },
   "repository": {
     "type": "git",
@@ -15,8 +22,15 @@
   },
   "dependencies": {
     "@actions/cache": "^1.0.7",
-    "@actions/core": "^1.2.5",
-    "@actions/exec": "^1.1.0"
+    "@actions/core": "^1.2.6",
+    "@actions/exec": "^1.1.0",
+    "@actions/github": "^1.1.0",
+    "@actions/glob": "^0.2.0",
+    "@actions/http-client": "^1.0.6",
+    "@actions/io": "^1.0.2",
+    "@actions/tool-cache": "^1.5.4",
+    "@microsoft/rush-lib": "^5.51.0",
+    "semver": "^6.1.1"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.29.0",
@@ -29,5 +43,14 @@
   "bugs": {
     "url": "https://github.com/chaseholdren/use-rush-action/issues"
   },
-  "homepage": "https://github.com/chaseholdren/use-rush-action#readme"
+  "homepage": "https://github.com/chaseholdren/use-rush-action#readme",
+  "prettier": {
+    "printWidth": 120,
+    "endOfLine": "auto",
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "jsxSingleQuote": true
+  }
 }
